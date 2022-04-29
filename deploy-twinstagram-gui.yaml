@@ -4,6 +4,8 @@ metadata:
   name: twinstagram-gui
 spec:
   replicas: 2
+  externalIPs:
+    - '172.16.1.3'
   selector:
     matchLabels:
       app: twinstagram-gui
@@ -13,8 +15,6 @@ spec:
         app: twinstagram-gui
     spec:
       type: NodePort
-      externalIPs:
-      - '172.16.1.3'
       nodeSelector:
         "role": worker
       containers:
