@@ -11,4 +11,4 @@ spec:
     targetPort: 80
   type: NodePort
   externalIPs:
-    - '{{10.96.1.11}}'
+    - '10.96.1.11'
