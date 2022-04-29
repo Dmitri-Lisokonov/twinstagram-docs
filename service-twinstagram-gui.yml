@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: twinstagram-gui
 spec:
-  ports:
-  - port: 80
   selector:
     app: twinstagram-gui
-  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
