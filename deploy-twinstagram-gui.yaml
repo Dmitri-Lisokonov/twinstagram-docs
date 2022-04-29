@@ -4,6 +4,7 @@ metadata:
   name: twinstagram-gui
 spec:
   replicas: 2
+  type: NodePort
   selector:
     matchLabels:
       app: twinstagram-gui
@@ -12,7 +13,6 @@ spec:
       labels:
         app: twinstagram-gui
     spec:
-      type: NodePort
       nodeSelector:
         "role": worker
       containers:
