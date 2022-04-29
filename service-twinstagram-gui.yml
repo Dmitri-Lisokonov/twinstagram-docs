@@ -3,11 +3,10 @@ kind: Service
 metadata: 
   name: twinstagram-gui
 spec: 
-  ports: 
-    - 
-      name: port-twinstagram-gui
-      port: 80
-      targetPort: 80
-      type: NodePort
-  selector: 
-    app: twinstagram-gui
+  selector:
+    tag: twinstagram-gui-port
+  ports:
+  - name: twinstagram-gui-port
+    port: 80
+    targetPort: 80
+  type: NodePort
