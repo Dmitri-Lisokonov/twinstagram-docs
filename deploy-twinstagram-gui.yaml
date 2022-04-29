@@ -12,6 +12,9 @@ spec:
       labels:
         app: twinstagram-gui
     spec:
+      type: NodePort
+      externalIPs:
+      - 172.16.1.3
       nodeSelector:
         "role": worker
       containers:
@@ -28,3 +31,4 @@ spec:
         - containerPort: 80
           name: redis
         imagePullPolicy: Always
+
