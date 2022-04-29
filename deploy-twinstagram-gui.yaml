@@ -4,7 +4,6 @@ metadata:
   name: twinstagram-gui
 spec:
   replicas: 2
-  type: NodePort
   selector:
     matchLabels:
       app: twinstagram-gui
