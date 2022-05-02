@@ -15,8 +15,8 @@ spec:
       nodeSelector:
         "beta.kubernetes.io/os": linux
       containers:
-      - name: aci-image-service
-        image: Dmitri1994/twinstagram-gui:latest
+      - name: twinstagram-gui
+        image: dmitri1994/twinstagram-gui:latest
         resources:
           requests:
             cpu: 100m
