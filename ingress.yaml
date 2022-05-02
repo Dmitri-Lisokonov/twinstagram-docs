@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: http-ingress
   annotations:
+data:
+  external-status-address: "10.164.15.220"
 spec:
   rules:
   - http:
