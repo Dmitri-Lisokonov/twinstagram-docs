@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: test
+            name: twinstagram-gui
             port:
               number: 80
