@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: http-ingress
   annotations:
-data:
-  external-status-address: "10.164.15.220"
 spec:
   rules:
   - http:
@@ -14,12 +12,5 @@ spec:
         backend:
           service:
             name: twinstagram-gui
-            port:
-              number: 80
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: ocelot-api-gateway
             port:
               number: 80
