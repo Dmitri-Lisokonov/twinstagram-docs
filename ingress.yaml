@@ -14,3 +14,10 @@ spec:
             name: twinstagram-gui
             port:
               number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: aci-api-gateway
+            port:
+              number: 80
