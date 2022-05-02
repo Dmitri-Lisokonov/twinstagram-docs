@@ -6,13 +6,6 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: twinstagram-gui
-            port:
-              number: 80
       - path: /api
         pathType: Prefix
         backend:

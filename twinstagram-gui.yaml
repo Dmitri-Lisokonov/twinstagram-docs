@@ -13,7 +13,7 @@ spec:
         app: twinstagram-gui
     spec:
       nodeSelector:
-        "beta.kubernetes.io/os": linux
+        "role": worker
       containers:
       - name: twinstagram-gui
         image: dmitri1994/twinstagram-gui:latest
