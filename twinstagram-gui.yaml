@@ -13,10 +13,10 @@ spec:
         app: twinstagram-gui
     spec:
       nodeSelector:
-        "role": worker
+        "beta.kubernetes.io/os": linux
       containers:
-      - name: twinstagram-gui
-        image: dmitri1994/twinstagram-gui:latest
+      - name: aci-image-service
+        image: Dmitri1994/twinstagram-gui:latest
         resources:
           requests:
             cpu: 100m
@@ -28,4 +28,14 @@ spec:
         - containerPort: 80
           name: redis
         imagePullPolicy: Always
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: twinstagram-gui
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: twinstagram-gui
