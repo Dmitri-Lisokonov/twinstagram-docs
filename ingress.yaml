@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: aci-api-gateway
+            name: message-service
             port:
               number: 80

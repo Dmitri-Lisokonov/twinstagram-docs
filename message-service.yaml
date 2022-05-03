@@ -17,6 +17,12 @@ spec:
       containers:
       - name: message-service
         image: dmitri1994/message-service:latest
+        env:
+        - name: db-connection-string
+          valueFrom:
+            secretKeyRef:
+              name: db-connection-string
+              key: connectionstring
         resources:
           requests:
             cpu: 100m
