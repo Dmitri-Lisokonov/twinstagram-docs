@@ -16,7 +16,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: message-service
-        image: dmitri1994/message-service:latest
+        image: dmitri1994/twinstagram-message-service:latest
         env:
         - name: db-connection-string
           valueFrom:
