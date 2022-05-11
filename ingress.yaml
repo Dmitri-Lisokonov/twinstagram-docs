@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: message-service
+            name: ocelot-gateway
             port:
               number: 80
