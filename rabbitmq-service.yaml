@@ -1,11 +1,44 @@
 apiVersion: apps/v1
 kind: Deployment
-services:
-    rabbitmq:
-          image: rabbitmq:3-management-alpine
-          container_name: rabbitmq
-          volumes:
-            - rabbitmq:/rabbitmq
-          ports:
-            - "15672:15672"
-            - "5672:5672"
+metadata:
+  name: rabbitmq-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rabbitmq-service
+  template:
+    metadata:
+      labels:
+        app: rabbitmq-service
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: rabbitmq-service
+        image: rabbitmq:3-management-alpine
+        volumes:
+        - rabbitmq:/rabbitmq
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - "15672:15672"
+        - "5672:5672"
+          name: redis
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: rabbitmq-service
