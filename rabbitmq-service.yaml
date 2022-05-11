@@ -29,8 +29,6 @@ spec:
         ports:
         - "15672:15672"
         - "5672:5672"
-          name: redis
-        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
