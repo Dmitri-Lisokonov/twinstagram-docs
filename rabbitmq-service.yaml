@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+services:
+    rabbitmq:
+          image: rabbitmq:3-management-alpine
+          container_name: rabbitmq
+          volumes:
+            - rabbitmq:/rabbitmq
+          ports:
+            - "15672:15672"
+            - "5672:5672"
