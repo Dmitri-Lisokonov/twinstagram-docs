@@ -6,7 +6,7 @@ metadata:
   name: rabbitmq
 spec:
   replicas: 2
-  image: rabbitmq:3.9.11
+  image: rabbitmq:3-management
   service:
     type: ClusterIP
   persistence:
